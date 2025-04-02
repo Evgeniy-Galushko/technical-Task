@@ -1,23 +1,18 @@
 import { NavLink } from "react-router-dom";
 import sprite from "../../img/icon-sprite.svg";
+import s from "./Header.module.css";
+import Navigation from "../Navigation/Navigation.jsx";
+
 export default function Header() {
   return (
-    <div>
-      <NavLink to="/">
-        <svg width="104" height="16">
+    <div className={s.header}>
+      <NavLink to="/" className={s.logo}>
+        <svg className={s.logoSvg}>
           <use href={`${sprite}#icon-logo`} />
         </svg>
       </NavLink>
 
-      {/* <a href="http://localhost:5173/">
-        <svg width="104" height="16">
-          <use href={`${sprite}#icon-logo`} />
-        </svg>
-      </a> */}
-
-      {/* <NavLink to="/" className={buildLinkClass}>
-        Home
-      </NavLink> */}
+      <Navigation />
     </div>
   );
 }

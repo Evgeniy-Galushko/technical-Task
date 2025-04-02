@@ -1,0 +1,54 @@
+.homePage {
+  /* max-width: 1440px; */
+  height: 700px;
+  background: url("../../img/Picture.jpg"), rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.greetings {
+  box-sizing: border-box;
+  width: 783px;
+  height: 204px;
+  position: relative;
+  margin: 0 auto;
+  top: 436px;
+}
+
+.title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
+}
+
+.paragraph {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  text-align: center;
+  color: #fff;
+  margin: 16px 0 40px 0;
+}
+
+.link {
+  border-radius: 12px;
+  padding: 12px 99px;
+  width: 276px;
+  height: 44px;
+  background-color: #3470ff;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  margin-left: 235.5px;
+
+  &:hover {
+    background-color: #0b44cd;
+    transition: background-color 400ms linear;
+  }
+}

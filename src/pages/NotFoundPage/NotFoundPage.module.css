@@ -1,0 +1,44 @@
+.notFoundPage {
+  /* max-width: 1440px; */
+  height: 700px;
+  background: url("../../img/Picture.jpg"), rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.div {
+  margin: 0 auto;
+  width: 850px;
+  position: relative;
+  top: 350px;
+}
+
+.title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.link {
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 12px 99px;
+  width: 276px;
+  height: 44px;
+  background-color: #3470ff;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  margin-left: 237px;
+
+  &:hover {
+    background-color: #0b44cd;
+    transition: background-color 400ms linear;
+  }
+}

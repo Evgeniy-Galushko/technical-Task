@@ -67,6 +67,11 @@ button:focus-visible {
   }
 } */
 
+:root {
+  --font-family: "Manrope", sans-serif;
+  --second-family: "Inter", sans-serif;
+}
+
 body {
   margin: 0;
 }

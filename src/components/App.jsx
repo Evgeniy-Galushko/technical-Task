@@ -1,7 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./Header/Header.jsx";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+// import { requestСars,  } from "../redux/operations.js";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
 const CatalogPage = lazy(() => import("../pages/CatalogPage/CatalogPage.jsx"));
@@ -13,6 +16,12 @@ const NotFoundPage = lazy(() =>
 );
 
 function App() {
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(requestСars());
+  // }, [dispatch]);
+
   return (
     <div>
       <Header />
