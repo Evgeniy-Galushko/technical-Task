@@ -1,10 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./Header/Header.jsx";
-import { Suspense, lazy, useEffect } from "react";
-import { useDispatch } from "react-redux";
-
-// import { requestСars,  } from "../redux/operations.js";
+import { Suspense, lazy, useState } from "react";
+import { RingLoader } from "react-spinners";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
 const CatalogPage = lazy(() => import("../pages/CatalogPage/CatalogPage.jsx"));
@@ -16,16 +14,22 @@ const NotFoundPage = lazy(() =>
 );
 
 function App() {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(requestСars());
-  // }, [dispatch]);
+  const [color, setColor] = useState("#3470FF");
 
   return (
     <div>
       <Header />
-      <Suspense fallback={<div>Loading page...</div>}>
+      <Suspense
+        fallback={
+          <RingLoader
+            color={color}
+            size={80}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+            className="spiner"
+          />
+        }
+      >
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />

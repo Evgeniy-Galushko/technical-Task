@@ -1,0 +1,10 @@
+.detailsPage {
+  padding: 84px 120px 104px 120px;
+}
+
+.detailsPageImg {
+  display: block;
+  border-radius: 19px;
+  width: 640px;
+  height: 512px;
+}

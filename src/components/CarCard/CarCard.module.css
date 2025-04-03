@@ -1,0 +1,91 @@
+.carCard {
+}
+
+.cardImg {
+  border-radius: 14px;
+  width: 276px;
+  height: 268px;
+}
+
+.brandPrice {
+  margin: 16px 0 8px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.drend {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.drendColor {
+  color: #3470ff;
+}
+
+.price {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.addresDiv {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 4px;
+}
+
+.typeDiv {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 28px;
+}
+
+.address {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8d929a;
+  border-right: 1px solid #dadde1;
+  padding: 0 6px;
+}
+
+.addressLeft {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8d929a;
+  border-right: 1px solid #dadde1;
+  padding: 0 6px 0 0;
+}
+
+.mileage {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8d929a;
+  padding: 0 6px;
+}
+
+.link {
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 12px 97px;
+  width: 276px;
+  height: 44px;
+  background-color: #3470ff;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  cursor: pointer;
+}

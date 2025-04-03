@@ -15,11 +15,11 @@ export const requestСars = createAsyncThunk(
   }
 );
 
-export const requestСarsId = createAsyncThunk(
-  "cars/requestAll",
-  async (_, thunkAPI) => {
+export const requestСarId = createAsyncThunk(
+  "cars/requestСarId",
+  async (id, thunkAPI) => {
     try {
-      const data = await axios.get("/cars");
+      const data = await axios.get(`/cars/${id}`);
       return data.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

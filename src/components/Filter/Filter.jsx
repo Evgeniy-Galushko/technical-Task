@@ -16,8 +16,12 @@ export default function Filter({ brands }) {
         <Form>
           <Field as="select" name="level">
             <option>Choose a brand</option>
-            {brands.map((brend) => {
-              return <option value={brend}>{brend}</option>;
+            {brands.map((brend, index) => {
+              return (
+                <option key={index} value={brend}>
+                  {brend}
+                </option>
+              );
             })}
             {/* <option>Choose a brand</option> */}
           </Field>
