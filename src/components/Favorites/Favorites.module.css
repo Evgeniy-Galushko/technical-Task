@@ -1,0 +1,14 @@
+.favorites {
+  position: relative;
+  left: 244px;
+  bottom: 254px;
+}
+
+.input {
+  display: none;
+}
+
+.iconHeart {
+  width: 16px;
+  height: 16px;
+}

@@ -1,5 +1,8 @@
 import { NavLink, useLocation } from "react-router-dom";
+
 import s from "./CarCard.module.css";
+import { useState } from "react";
+import Favorites from "../Favorites/Favorites.jsx";
 
 export default function CarCard({
   id,
@@ -14,9 +17,11 @@ export default function CarCard({
   mileage,
 }) {
   const location = useLocation();
+
   return (
     <div className={s.carCard}>
       <img src={img} alt={brand} className={s.cardImg} />
+      <Favorites id={id} />
       <div className={s.brandPrice}>
         <h2 className={s.drend}>
           {brand} <span className={s.drendColor}>{model}</span>, {year}

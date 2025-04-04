@@ -1,5 +1,8 @@
 .detailsPage {
   padding: 84px 120px 104px 120px;
+  display: flex;
+  flex-direction: row;
+  gap: 72px;
 }
 
 .detailsPageImg {
@@ -7,4 +10,118 @@
   border-radius: 19px;
   width: 640px;
   height: 512px;
+}
+.brendLi {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.brendTitle {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  text-align: center;
+  color: #101828;
+}
+
+.brendId {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+  align-content: flex-end;
+}
+
+.addresLi {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.addres {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  margin-left: 4px;
+}
+
+.addresMileage {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  margin-left: 16px;
+}
+
+.rentalPriceLi {
+  margin-top: 16px;
+}
+
+.rentalPrice {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: #3470ff;
+}
+
+.descriptionLi {
+  margin-top: 32px;
+}
+
+.description {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.carCharacteristics {
+  margin-top: 68px;
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
+}
+
+.characteristicsHeadlines {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+}
+
+.machineDescription {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.machineDescriptionLi {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.machineDescriptionP {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
 }

@@ -1,14 +1,24 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
-import { selectCarId } from "../../redux/selectors.js";
-import { requestСarId } from "../../redux/operations.js";
+import { selectCarId } from "../../redux/cars/selectors.js";
+import { requestСarId } from "../../redux/cars/operations.js";
+import sprite from "../../img/icon-sprite.svg";
 import s from "./CatalogDetailsPage.module.css";
+import RentalForm from "../../components/RentalForm/RentalForm.jsx";
 
 export default function CatalogDetailsPage() {
   const location = useLocation();
   const dispatch = useDispatch();
   const oneCar = useSelector(selectCarId);
+  const { id } = useParams();
+
+  useEffect(() => {
+    dispatch(requestСarId(id));
+  }, [dispatch, id]);
+
+  const backLinkHref = useRef(location.state ?? `/catalog`);
+  if (!oneCar) return;
 
   const {
     accessories,
@@ -27,55 +37,114 @@ export default function CatalogDetailsPage() {
     type,
     year,
   } = oneCar;
-  const addres = address.split(",");
 
-  console.log(oneCar);
-
-  const backLinkHref = useRef(location.state ?? `/catalog`);
-
-  const { id } = useParams();
-  useEffect(() => {
-    dispatch(requestСarId(id));
-  }, [dispatch, id]);
+  let addres;
+  if (address) {
+    addres = address.split(",");
+  } else {
+    return;
+  }
 
   return (
     <div className={s.detailsPage}>
       <div className={s.detailsPageDivImg}>
         <img src={img} alt={brand} className={s.detailsPageImg} />
+        <RentalForm />
       </div>
-      <div className={s.detailsPageDivModel}>
-        <h2>
-          {brand} {model}, {year}
-        </h2>
-        <div className={s.addresDiv}>
-          <p>
-            {addres[1]}, {addres[2]}
-          </p>
-          <p>Mileage: {mileage} km</p>
-        </div>
-        <p>&#x24;{rentalPrice}</p>
-        <p>{description}</p>
-      </div>
-      <div className={s.carCharacteristics}>
-        <div>
-          <h3>Rental Conditions: </h3>
-          <p>{rentalConditions[0]}</p>
-          <p>{rentalConditions[2]}</p>
-          <p>{rentalConditions[1]}</p>
-        </div>
-        <div>
-          <h3>Car Specifications: </h3>
-          <p>Year: {year}</p>
-          <p>Type: {type}</p>
-          <p>Fuel Consumption: {fuelConsumption}</p>
-          <p>Engine Size: {engineSize}</p>
-        </div>
-        <div>
-          <h3>Accessories and functionalities: </h3>
-          <p>{accessories[0]}</p>
-          <p>{accessories[1]}</p>
-          <p>{accessories[2]}</p>
-        </div>
+      <div>
+        <ul className={s.detailsPageUlModel}>
+          <li className={s.brendLi}>
+            <h2 className={s.brendTitle}>
+              {brand} {model}, {year}
+            </h2>
+            <p className={s.brendId}>id:{id.slice(0, 8)}</p>
+          </li>
+          <li className={s.addresLi}>
+            <svg className={s.icon}>
+              <use href={`${sprite}#icon-geopoint`} />
+            </svg>
+            <p className={s.addres}>
+              {addres[1]}, {addres[2]}
+            </p>
+            <p className={s.addresMileage}>
+              Mileage:{" "}
+              {(mileage + "").replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ")} km
+            </p>
+          </li>
+          <li className={s.rentalPriceLi}>
+            <p className={s.rentalPrice}>&#x24;{rentalPrice}</p>
+          </li>
+          <li className={s.descriptionLi}>
+            <p className={s.description}>{description}</p>
+          </li>
+        </ul>
+        <ul className={s.carCharacteristics}>
+          <li>
+            <h3 className={s.characteristicsHeadlines}>Rental Conditions: </h3>
+            <ul className={s.machineDescription}>
+              {rentalConditions.map((rental, index) => {
+                return (
+                  <li key={index} className={s.machineDescriptionLi}>
+                    <svg className={s.icon}>
+                      <use href={`${sprite}#icon-check-circle`} />
+                    </svg>
+                    <p className={s.machineDescriptionP}>{rental}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+          <li>
+            <h3 className={s.characteristicsHeadlines}>Car Specifications: </h3>
+            <ul className={s.machineDescription}>
+              <li className={s.machineDescriptionLi}>
+                <svg className={s.icon}>
+                  <use href={`${sprite}#icon-calendar`} />
+                </svg>
+                <p className={s.machineDescriptionP}>Year: {year}</p>
+              </li>
+              <li className={s.machineDescriptionLi}>
+                <svg className={s.icon}>
+                  <use href={`${sprite}#icon-car`} />
+                </svg>
+                <p className={s.machineDescriptionP}>Type: {type}</p>
+              </li>
+              <li className={s.machineDescriptionLi}>
+                <svg className={s.icon}>
+                  <use href={`${sprite}#icon-refueling`} />
+                </svg>
+                <p className={s.machineDescriptionP}>
+                  Fuel Consumption: {fuelConsumption}
+                </p>
+              </li>
+              <li className={s.machineDescriptionLi}>
+                <svg className={s.icon}>
+                  <use href={`${sprite}#icon-gear`} />
+                </svg>
+                <p className={s.machineDescriptionP}>
+                  Engine Size: {engineSize}
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3 className={s.characteristicsHeadlines}>
+              Accessories and functionalities:{" "}
+            </h3>
+            <ul className={s.machineDescription}>
+              {accessories.map((accessor, index) => {
+                return (
+                  <li key={index} className={s.machineDescriptionLi}>
+                    <svg className={s.icon}>
+                      <use href={`${sprite}#icon-check-circle`} />
+                    </svg>
+                    <p className={s.machineDescriptionP}>{accessor}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   );

@@ -1,0 +1,84 @@
+.calendarBox {
+  border: 1px solid #3470ff;
+  border-radius: 12px;
+  width: 310px;
+  height: 305px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 10px;
+
+  position: absolute;
+  top: 995px;
+}
+
+.titleCalendar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonArrows {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.month {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  color: #101828;
+  width: 150px;
+  margin: 0 24px 0 24px;
+}
+
+.calendar {
+  padding: 10px;
+  font-family: "Courier Prime", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.buttonCalend {
+  width: 35px;
+  height: 30px;
+  border-radius: 50px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: #101828;
+
+  &:hover {
+    background-color: #3470ff;
+    color: #fff;
+  }
+}
+
+.iconL {
+  width: 24px;
+  height: 24px;
+  rotate: -90deg;
+}
+
+.iconR {
+  width: 24px;
+  height: 24px;
+  rotate: 90deg;
+}
