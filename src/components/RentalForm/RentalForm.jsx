@@ -1,11 +1,10 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { useId, useState } from "react";
+import { useState } from "react";
 import * as Yup from "yup";
 import s from "./RentalForm.module.css";
 import Calendar from "../../components/Calendar/Calendar.jsx";
 
 export default function RentalForm() {
-  const dateId = useId();
   const [calendars, setCalendars] = useState(false);
   const [dayOfMonth, setDayOfMonth] = useState("");
   const initialValues = {

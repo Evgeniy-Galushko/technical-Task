@@ -91,4 +91,10 @@
   line-height: 1.25;
   color: #fff;
   cursor: pointer;
+
+  &:hover,
+  :focus {
+    background-color: #0b44cd;
+    transition: background-color 400ms linear;
+  }
 }

@@ -9,14 +9,15 @@ import LoadMoreBtn from "../../components/BuuttonLoad/LoadMoreBtn.jsx";
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
+  const [line, setLine] = useState();
   const cars = useSelector(selectCars);
   const brands = useSelector(selectBrands);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    dispatch(requestСars(page));
+    dispatch(requestСars(page, line));
     dispatch(requestBrands());
-  }, [dispatch, page]);
+  }, [dispatch, page, line]);
 
   const handleClick = () => {
     setPage(page + 1);
@@ -25,7 +26,7 @@ export default function CatalogPage() {
 
   return (
     <div className={s.sectionCatalog}>
-      <Filter brands={brands} />
+      <Filter brands={brands} setLine={setLine} />
       <ListOfCars cars={cars.cars} />
       {cars.totalPages > page && (
         <LoadMoreBtn handleClick={handleClick}>Load more</LoadMoreBtn>
