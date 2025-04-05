@@ -145,6 +145,8 @@
   color: #fff;
   margin-top: 25px;
 
+  cursor: pointer;
+
   &:hover,
   :focus {
     background-color: #0b44cd;

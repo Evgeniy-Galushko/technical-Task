@@ -3,6 +3,7 @@ import { useState } from "react";
 import * as Yup from "yup";
 import s from "./RentalForm.module.css";
 import Calendar from "../../components/Calendar/Calendar.jsx";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function RentalForm() {
   const [calendars, setCalendars] = useState(false);
@@ -10,12 +11,13 @@ export default function RentalForm() {
   const initialValues = {
     name: "",
     email: "",
-    bookingDate: "",
+    bookingDate: "Booking date",
     comment: "",
   };
   const handleSubmit = (values, actions) => {
     values.bookingDate = dayOfMonth;
     console.log(values);
+    toast.success("You have successfully booked a car!");
     actions.resetForm();
   };
 
@@ -36,6 +38,7 @@ export default function RentalForm() {
 
   return (
     <div className={s.boxForm}>
+      <Toaster position="top-center" reverseOrder={false} />
       <h3 className={s.formTitle}>Book your car now</h3>
       <p className={s.formParagraph}>
         Stay connected! We are always ready to help you.
@@ -66,9 +69,11 @@ export default function RentalForm() {
           />
           <Field
             className={s.inputDate}
-            type="button"
+            type="text"
             name="bookingDate"
-            value={dayOfMonth.length === 0 ? "Booking date" : dayOfMonth}
+            placeholder="Booking date"
+            // value={dayOfMonth.length === 0 ? "Booking date" : dayOfMonth}
+            // value={dayOfMonth}
             onClick={hendleClick}
           />
 

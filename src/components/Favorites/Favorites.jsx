@@ -8,7 +8,7 @@ export default function Favorites({ id }) {
 
   const favoritesCar = { carId };
 
-  // console.log(favoritesCar);
+  console.log(favoritesCar);
 
   const handlChange = (evt) => {
     setFavorites(evt.target.checked);

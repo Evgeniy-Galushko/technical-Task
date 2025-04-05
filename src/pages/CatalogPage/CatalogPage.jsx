@@ -32,6 +32,7 @@ export default function CatalogPage() {
   }, [dispatch, page]);
 
   const handleSubmit = (values, actions) => {
+    setArrayCars([]);
     const filterLine = queryString.stringify(values);
     dispatch(filterСars({ page, filterLine }));
     setArrayCars(filterCars.cars);
