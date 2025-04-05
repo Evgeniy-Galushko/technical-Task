@@ -15,7 +15,7 @@ export default function RentalForm() {
     comment: "",
   };
   const handleSubmit = (values, actions) => {
-    values.bookingDate = dayOfMonth;
+    // values.bookingDate = dayOfMonth;
     console.log(values);
     toast.success("You have successfully booked a car!");
     actions.resetForm();
@@ -69,12 +69,12 @@ export default function RentalForm() {
           />
           <Field
             className={s.inputDate}
-            type="text"
+            type="date"
             name="bookingDate"
             placeholder="Booking date"
             // value={dayOfMonth.length === 0 ? "Booking date" : dayOfMonth}
             // value={dayOfMonth}
-            onClick={hendleClick}
+            // onClick={hendleClick}
           />
 
           <Field

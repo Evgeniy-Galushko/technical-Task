@@ -4,18 +4,19 @@ import s from "./Favorites.module.css";
 
 export default function Favorites({ id }) {
   const [favorites, setFavorites] = useState(false);
-  const [carId, setCarId] = useState("");
+  const [carId, setCarId] = useState([]);
 
-  const favoritesCar = { carId };
+  const favoritesCar = carId;
 
-  console.log(favoritesCar);
+  // console.log(favoritesCar);
 
   const handlChange = (evt) => {
     setFavorites(evt.target.checked);
 
     if (evt.target.checked) {
-      setCarId(id);
     }
+
+    console.log(carId);
   };
   return (
     <div className={s.favorites}>
