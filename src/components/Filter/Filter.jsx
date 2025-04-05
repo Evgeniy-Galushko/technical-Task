@@ -3,7 +3,7 @@ import s from "./Filter.module.css";
 import { Field, Form, Formik } from "formik";
 import queryString from "query-string";
 
-export default function Filter({ brands, setLine }) {
+export default function Filter({ brands, handleSubmit }) {
   const brandId = useId();
   const rentalPriceId = useId();
   const mileageId = useId();
@@ -13,15 +13,6 @@ export default function Filter({ brands, setLine }) {
     rentalPrice: "",
     minMileage: "",
     maxMileage: "",
-  };
-
-  const handleSubmit = (values, actions) => {
-    console.log(values);
-
-    const parsed = queryString.stringify(values);
-    setLine(parsed);
-
-    actions.resetForm();
   };
 
   return (

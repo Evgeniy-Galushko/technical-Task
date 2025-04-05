@@ -1,6 +1,7 @@
 .spiner {
   position: relative;
-  top: 100px;
-  left: 720px;
+  top: 50px;
+  /* left: 720px; */
   /* left: auto; */
+  margin: 0 auto;
 }

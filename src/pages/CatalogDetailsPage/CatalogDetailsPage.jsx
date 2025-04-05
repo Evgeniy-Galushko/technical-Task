@@ -1,17 +1,20 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
-import { selectCarId } from "../../redux/cars/selectors.js";
+import { selectCarId, selectLoading } from "../../redux/cars/selectors.js";
 import { requestСarId } from "../../redux/cars/operations.js";
 import sprite from "../../img/icon-sprite.svg";
 import s from "./CatalogDetailsPage.module.css";
 import RentalForm from "../../components/RentalForm/RentalForm.jsx";
+import { RingLoader } from "react-spinners";
 
 export default function CatalogDetailsPage() {
   const location = useLocation();
   const dispatch = useDispatch();
   const oneCar = useSelector(selectCarId);
+  const [color, setColor] = useState("#3470FF");
   const { id } = useParams();
+  const spiner = useSelector(selectLoading);
 
   useEffect(() => {
     dispatch(requestСarId(id));
@@ -45,7 +48,15 @@ export default function CatalogDetailsPage() {
     return;
   }
 
-  return (
+  return spiner ? (
+    <RingLoader
+      className={s.loader}
+      color={color}
+      size={80}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+    />
+  ) : (
     <div className={s.detailsPage}>
       <div className={s.detailsPageDivImg}>
         <img src={img} alt={brand} className={s.detailsPageImg} />

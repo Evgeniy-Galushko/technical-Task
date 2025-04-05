@@ -3,3 +3,9 @@
   padding: 84px 120px 124px 120px;
   margin: 0 auto;
 }
+
+.loader {
+  top: 50px;
+  margin: 0 auto;
+  /* margin: 500px; */
+}

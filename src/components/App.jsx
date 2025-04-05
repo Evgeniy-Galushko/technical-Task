@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./Header/Header.jsx";
 import { Suspense, lazy, useState } from "react";
-import { RingLoader } from "react-spinners";
+import { BarLoader } from "react-spinners";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
 const CatalogPage = lazy(() => import("../pages/CatalogPage/CatalogPage.jsx"));
@@ -21,12 +21,12 @@ function App() {
       <Header />
       <Suspense
         fallback={
-          <RingLoader
+          <BarLoader
             color={color}
-            size={80}
+            className="spiner"
+            size={150}
             aria-label="Loading Spinner"
             data-testid="loader"
-            className="spiner"
           />
         }
       >

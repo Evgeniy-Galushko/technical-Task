@@ -28,14 +28,9 @@ const carsSlice = createSlice({
 
         if (state.items.length === 0) {
           state.items = action.payload;
-          return;
         } else {
           state.items.cars = [...state.items.cars, ...action.payload.cars];
         }
-
-        // if (state.items.length !== 0) {
-        //   state.items.cars = [...state.items.cars, ...action.payload.cars];
-        // }
       })
       .addCase(requestСars.rejected, handleRejected)
       .addCase(requestСarId.pending, handlePending)

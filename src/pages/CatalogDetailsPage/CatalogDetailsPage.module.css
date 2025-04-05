@@ -125,3 +125,9 @@
   width: 16px;
   height: 16px;
 }
+
+.loader {
+  top: 50px;
+  margin: 0 auto;
+  /* margin: 500px; */
+}
