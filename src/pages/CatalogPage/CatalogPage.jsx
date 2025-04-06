@@ -32,6 +32,15 @@ export default function CatalogPage() {
   }, [dispatch, page]);
 
   const handleSubmit = (values, actions) => {
+    if (
+      values.brand.length === 0 &&
+      values.maxMileage.length === 0 &&
+      values.maxMileage.length === 0 &&
+      values.rentalPrice.length === 0
+    ) {
+      dispatch(requestСars(page));
+      return;
+    }
     setArrayCars([]);
     const filterLine = queryString.stringify(values);
     dispatch(filterСars({ page, filterLine }));

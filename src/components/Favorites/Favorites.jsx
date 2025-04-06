@@ -9,19 +9,10 @@ export default function Favorites({ id }) {
   const [favorites, setFavorites] = useState(false);
   const dispatch = useDispatch();
   const favoritesList = useSelector(selectFavoritetСar);
-  const [carId, setCarId] = useState([]);
-
-  const favoritesCar = carId;
-
-  console.log(favoritesList);
-
-  // console.log(favoritesCar);
 
   const handlChange = (evt) => {
     setFavorites(evt.target.checked);
     dispatch(requestFavoritetСarId(id));
-
-    console.log(carId);
   };
   return (
     <div className={s.favorites}>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
 import { selectCarId, selectLoading } from "../../redux/cars/selectors.js";
@@ -9,7 +9,6 @@ import RentalForm from "../../components/RentalForm/RentalForm.jsx";
 import { RingLoader } from "react-spinners";
 
 export default function CatalogDetailsPage() {
-  const location = useLocation();
   const dispatch = useDispatch();
   const oneCar = useSelector(selectCarId);
   const [color, setColor] = useState("#3470FF");
@@ -18,9 +17,8 @@ export default function CatalogDetailsPage() {
 
   useEffect(() => {
     dispatch(requestСarId(id));
-  }, [dispatch, id]);
+  }, [dispatch]);
 
-  const backLinkHref = useRef(location.state ?? `/catalog`);
   if (!oneCar) return;
 
   const {

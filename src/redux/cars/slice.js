@@ -31,7 +31,6 @@ const carsSlice = createSlice({
       .addCase(requestСars.fulfilled, (state, action) => {
         state.isloading = false;
         state.error = null;
-
         if (state.items.length === 0) {
           state.items = action.payload;
         } else {

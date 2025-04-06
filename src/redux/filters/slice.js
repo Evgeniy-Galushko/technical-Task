@@ -25,7 +25,9 @@ const filtersSlice = createSlice({
         state.error = null;
         state.items = action.payload;
 
-        // if (action.payload.totalPages > 1) {
+        // if (state.items.length === 0) {
+        //   state.items = action.payload;
+        // } else {
         //   state.items.cars = [...state.items.cars, ...action.payload.cars];
         // }
       })
