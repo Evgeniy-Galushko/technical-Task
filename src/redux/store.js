@@ -13,22 +13,18 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-const rootReducer = combineReducers({
-  cars: carsReducer,
-  filters: filtersReducer,
-});
-
-const persistConfig = {
-  key: "root",
+const carPersistConfig = {
+  key: "cars",
   storage,
 
-  whitelist: ["cars"],
+  whitelist: ["favorites"],
 };
 
-const persisitedReducer = persistReducer(persistConfig, rootReducer);
-
 const store = configureStore({
-  reducer: persisitedReducer,
+  reducer: {
+    cars: persistReducer(carPersistConfig, carsReducer),
+    filters: filtersReducer,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
