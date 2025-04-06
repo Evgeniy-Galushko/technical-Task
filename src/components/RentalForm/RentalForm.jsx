@@ -15,8 +15,6 @@ export default function RentalForm() {
     comment: "",
   };
   const handleSubmit = (values, actions) => {
-    // values.bookingDate = dayOfMonth;
-    console.log(values);
     toast.success("You have successfully booked a car!");
     actions.resetForm();
   };
@@ -31,10 +29,6 @@ export default function RentalForm() {
     name: Yup.string().matches(condition.name).required("*"),
     email: Yup.string().matches(condition.email, "Too Short!").required("*"),
   });
-
-  const hendleClick = () => {
-    setCalendars(true);
-  };
 
   return (
     <div className={s.boxForm}>

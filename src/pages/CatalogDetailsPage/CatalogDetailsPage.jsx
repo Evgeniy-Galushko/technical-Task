@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { selectCarId, selectLoading } from "../../redux/cars/selectors.js";
 import { requestСarId } from "../../redux/cars/operations.js";
 import sprite from "../../img/icon-sprite.svg";

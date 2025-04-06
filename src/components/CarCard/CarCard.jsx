@@ -1,7 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 
 import s from "./CarCard.module.css";
-import { useState } from "react";
 import Favorites from "../Favorites/Favorites.jsx";
 
 export default function CarCard({
