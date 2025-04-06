@@ -23,13 +23,7 @@ const filtersSlice = createSlice({
       .addCase(filterСars.fulfilled, (state, action) => {
         state.isloading = false;
         state.error = null;
-        // state.items = action.payload;
-
-        if (state.items.length === 0) {
-          state.items = action.payload;
-        } else {
-          state.items.cars = [...state.items.cars, ...action.payload.cars];
-        }
+        state.items = action.payload;
       })
       .addCase(filterСars.rejected, handleRejected);
   },

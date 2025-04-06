@@ -39,6 +39,7 @@ export default function CatalogPage() {
       values.rentalPrice.length === 0
     ) {
       dispatch(requestСars(page));
+      setArrayCars([]);
       return;
     }
     setArrayCars([]);
