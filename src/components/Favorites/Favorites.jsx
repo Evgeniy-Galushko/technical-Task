@@ -1,20 +1,25 @@
 import { useState } from "react";
 import sprite from "../../img/icon-sprite.svg";
 import s from "./Favorites.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFavoritetСar } from "../../redux/cars/selectors.js";
+import { requestFavoritetСarId } from "../../redux/cars/operations.js";
 
 export default function Favorites({ id }) {
   const [favorites, setFavorites] = useState(false);
+  const dispatch = useDispatch();
+  const favoritesList = useSelector(selectFavoritetСar);
   const [carId, setCarId] = useState([]);
 
   const favoritesCar = carId;
+
+  console.log(favoritesList);
 
   // console.log(favoritesCar);
 
   const handlChange = (evt) => {
     setFavorites(evt.target.checked);
-
-    if (evt.target.checked) {
-    }
+    dispatch(requestFavoritetСarId(id));
 
     console.log(carId);
   };

@@ -1,7 +1,6 @@
-import { useId, useState } from "react";
+import { useId } from "react";
 import s from "./Filter.module.css";
 import { Field, Form, Formik } from "formik";
-import queryString from "query-string";
 
 export default function Filter({ brands, handleSubmit }) {
   const brandId = useId();

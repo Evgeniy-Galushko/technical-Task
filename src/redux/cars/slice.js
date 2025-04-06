@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { requestСars, requestСarId, requestBrands } from "./operations.js";
+import {
+  requestСars,
+  requestСarId,
+  requestBrands,
+  requestFavoritetСarId,
+} from "./operations.js";
 
 const handlePending = (state) => {
   state.isloading = true;
@@ -15,6 +20,7 @@ const carsSlice = createSlice({
     items: [],
     brands: [],
     carId: {},
+    favorites: [],
     isloading: false,
     error: null,
   },
@@ -44,7 +50,14 @@ const carsSlice = createSlice({
       .addCase(requestBrands.fulfilled, (state, action) => {
         state.brands = action.payload;
       })
-      .addCase(requestBrands.rejected, handleRejected);
+      .addCase(requestBrands.rejected, handleRejected)
+      .addCase(requestFavoritetСarId.pending, handlePending)
+      .addCase(requestFavoritetСarId.fulfilled, (state, action) => {
+        state.isloading = false;
+        state.error = null;
+        state.favorites.push(action.payload);
+      })
+      .addCase(requestFavoritetСarId.rejected, handleRejected);
   },
 });
 

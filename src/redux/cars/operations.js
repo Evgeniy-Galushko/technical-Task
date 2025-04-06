@@ -38,3 +38,15 @@ export const requestBrands = createAsyncThunk(
     }
   }
 );
+
+export const requestFavoritetСarId = createAsyncThunk(
+  "cars/favoriteСarId",
+  async (id, thunkAPI) => {
+    try {
+      const data = await axios.get(`/cars/${id}`);
+      return data.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

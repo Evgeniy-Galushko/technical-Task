@@ -13,7 +13,6 @@ const filtersSlice = createSlice({
   name: "filters",
   initialState: {
     items: [],
-    totalPage: null,
     isloading: false,
     error: null,
   },
@@ -22,7 +21,6 @@ const filtersSlice = createSlice({
     builder
       .addCase(filterСars.pending, handlePending)
       .addCase(filterСars.fulfilled, (state, action) => {
-        console.log(action.payload.totalPages);
         state.isloading = false;
         state.error = null;
         state.items = action.payload;

@@ -22,7 +22,6 @@ export default function CatalogPage() {
   const brands = useSelector(selectBrands);
   const [page, setPage] = useState(1);
 
-  console.log(filterCars);
   const car = arrayCars.length === 0 ? cars.cars : filterCars.cars;
   const pagess =
     arrayCars.length === 0 ? cars.totalPages : filterCars.totalPages;
