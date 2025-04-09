@@ -15,7 +15,7 @@ export default function Filter({ brands, handleSubmit }) {
   };
 
   return (
-    <div className={s.filter}>
+    <section className={s.filter}>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form className={s.formFilter}>
           <div className={s.divBox}>
@@ -95,6 +95,6 @@ export default function Filter({ brands, handleSubmit }) {
           </button>
         </Form>
       </Formik>
-    </div>
+    </section>
   );
 }

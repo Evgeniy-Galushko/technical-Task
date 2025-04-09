@@ -1,5 +1,6 @@
 .homePage {
   /* max-width: 1440px; */
+  display: block;
   height: 700px;
   background: url("../../img/Picture.jpg"), rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat;

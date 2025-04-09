@@ -3,16 +3,22 @@ import s from "./HomePage.module.css";
 
 export default function HomePage() {
   return (
-    <div className={s.homePage}>
-      <div className={s.greetings}>
-        <h1 className={s.title}>Find your perfect rental car</h1>
-        <p className={s.paragraph}>
-          Reliable and budget-friendly rentals for any journey
-        </p>
-        <NavLink to="/catalog" className={s.link}>
-          View Catalog
-        </NavLink>
-      </div>
-    </div>
+    <section className={s.homePage}>
+      <ul className={s.greetings}>
+        <li>
+          <h1 className={s.title}>Find your perfect rental car</h1>
+        </li>
+        <li>
+          <p className={s.paragraph}>
+            Reliable and budget-friendly rentals for any journey
+          </p>
+        </li>
+        <li>
+          <NavLink to="/catalog" className={s.link}>
+            View Catalog
+          </NavLink>
+        </li>
+      </ul>
+    </section>
   );
 }

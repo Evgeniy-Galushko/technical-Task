@@ -55,12 +55,12 @@ export default function CatalogDetailsPage() {
       data-testid="loader"
     />
   ) : (
-    <div className={s.detailsPage}>
-      <div className={s.detailsPageDivImg}>
+    <ul className={s.detailsPage}>
+      <li className={s.detailsPageDivImg}>
         <img src={img} alt={brand} className={s.detailsPageImg} />
         <RentalForm />
-      </div>
-      <div>
+      </li>
+      <li>
         <ul className={s.detailsPageUlModel}>
           <li className={s.brendLi}>
             <h2 className={s.brendTitle}>
@@ -154,7 +154,7 @@ export default function CatalogDetailsPage() {
             </ul>
           </li>
         </ul>
-      </div>
-    </div>
+      </li>
+    </ul>
   );
 }

@@ -68,8 +68,11 @@ button:focus-visible {
 } */
 
 :root {
+  min-width: 1440px;
   --font-family: "Manrope", sans-serif;
   --second-family: "Inter", sans-serif;
+  /* display: flex; */
+  /* justify-content: center; */
 }
 
 body {
@@ -103,4 +106,12 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+div {
+  display: contents;
 }

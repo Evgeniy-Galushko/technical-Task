@@ -5,7 +5,7 @@ import Navigation from "../Navigation/Navigation.jsx";
 
 export default function Header() {
   return (
-    <div className={s.header}>
+    <section className={s.header}>
       <NavLink to="/" className={s.logo}>
         <svg className={s.logoSvg}>
           <use href={`${sprite}#icon-logo`} />
@@ -13,6 +13,6 @@ export default function Header() {
       </NavLink>
 
       <Navigation />
-    </div>
+    </section>
   );
 }

@@ -58,13 +58,13 @@ export default function CatalogPage() {
   };
 
   return (
-    <div className={s.sectionCatalog}>
+    <section className={s.sectionCatalog}>
       <Toaster position="top-center" reverseOrder={false} />
       <Filter brands={brands} handleSubmit={handleSubmit} />
       <ListOfCars cars={car} />
       {pagess > page && (
         <LoadMoreBtn handleClick={handleClick}>Load more</LoadMoreBtn>
       )}
-    </div>
+    </section>
   );
 }
