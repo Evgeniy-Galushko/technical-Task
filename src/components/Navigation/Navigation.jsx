@@ -7,7 +7,7 @@ export default function Navigation() {
     return clsx(s.link, isActive && s.active);
   };
   return (
-    <nav className={s.naHheder}>
+    <nav className={s.navHeder}>
       <NavLink to="/" className={buildLinkClass}>
         Home
       </NavLink>
